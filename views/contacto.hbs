@@ -1,0 +1,75 @@
+<!-- Main -->
+<main class="holder">
+  <div class="columna left-column animate__animated animate__zoomIn">
+    <form action="/contacto" method="post" class="formulario">
+      <p>
+        <input
+          type="text"
+          placeholder="Usuario"
+          {{! pattern="^[a-z0-9]+(\\\\\\\\\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" }}
+          title="Debe contener @, una dirección de correo y un dominio"
+          required
+          name="usuario"
+        />
+      </p>
+      <div class="wrapp-input">
+        <span class="icon-eye" title="Mostrar y ocultar contraseña"><i
+            class="fas fa-eye-slash"
+          ></i></span>
+        <input
+          type="password"
+          id="pass"
+          name="pass"
+          placeholder="Contraseña"
+          {{! pattern="(?=.*\\\\\\\\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" }}
+          title="Debe contener al menos un número, una letra mayúscula y minúscula, 8 caracteres o más"
+          required
+          name="pass"
+        />
+      </div>
+      <div class="campo-texto">
+        <textarea
+          id="comentario"
+          placeholder="Comentario"
+          title="Puede dejarnos un comentario o sugerencia si lo desea"
+          name="comentarios"
+        ></textarea>
+      </div>
+      <p><input type="submit" value="Enviar" class="btn-enviar" /></p>
+    </form>
+    <p class="mensaje-formulario">{{message}}</p>
+  </div>
+
+  <div
+    class="columna right-column animate__animated animate__lightSpeedInRight"
+  >
+    <h2>Otras vías de contacto</h2>
+    <p>
+      También se pueden comunicar con nosotros por medio de nuestras redes
+      sociales:
+    </p>
+    <ul class="iconos-redes">
+      <li>
+        <a href="https://www.google.com/?hl=es"><i
+            class="fab fa-facebook"
+            title="Facebook"
+          ></i></a>
+      </li>
+
+      <li>
+        <a href="https://www.instagram.com/"><i
+            class="fab fa-instagram"
+            title="Instagram"
+          ></i></a>
+      </li>
+
+      <li>
+        <a href="https://web.whatsapp.com/"><i
+            class="fab fa-whatsapp"
+            title="Whatsapp"
+          ></i></a>
+      </li>
+    </ul>
+  </div>
+</main>
+<script src="./javascripts/mostrar-password.js"></script>

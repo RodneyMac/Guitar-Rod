@@ -1,0 +1,41 @@
+<div class="container" style="margin-top: 20px">
+  <div class="row">
+      <div class="col-6 offset-3">
+            {{#if error}}
+            <h6 class="message-modificar">{{message}}</h6>
+            {{/if}}
+        <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
+            <input type="hidden" value="{{novedad.id}}" name="id"/>
+            <div class="mb-3">
+                <label for="titulo" class="form-label titulo-modificar">Título</label>
+                <input type="text" class="form-control input-titulo" name="titulo" value="{{novedad.titulo}}" />
+            </div>
+            <div class="mb-3">
+                <label for="subtitulo" class="form-label subtitulo-modificar">Subtitulo</label>
+                <textarea class="form-control textarea-subtitulo" name="subtitulo">{{novedad.subtitulo}}</textarea>
+            </div>
+
+            <div class="mb-3">
+                <p class="imagen-modificar">
+                    <label>Imagen</label>
+                    <input type="file" name="imagen"/>
+                </p>
+                <p class="check-modificar">
+                    <label class="input-eliminar">
+                        <input type="checkbox" name="img_delete" value="1" />  Desea eliminar la imagen?
+                    </label>
+                    <input type="hidden" name="img_original" value="{{novedad.img_id}}" />
+                </p>
+            </div>
+
+            <div class="mb-3">
+                <label for="cuerpo" class="form-label cuerpo-modificar">Cuerpo</label>
+                <textarea class="form-control textarea-cuerpo" name="cuerpo">{{novedad.cuerpo}}</textarea>
+            </div>
+            <div class="btn-modificar">
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </div>
+        </form>
+      </div>
+  </div>
+</div>

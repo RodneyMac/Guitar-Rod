@@ -1,0 +1,66 @@
+<!-- Main -->
+<main class="">
+  {{#each novedades}}
+  <div class="novedades-bd animate__animated animate__flipInX">
+    <h3 class="titulo-bd">{{titulo}}</h3>
+    {{#if imagen}}
+      <img src="{{imagen}}" alt="{{titulo}}" />
+    {{/if}}
+    <h4 class="subtitulo-bd">{{subtitulo}}</h4>
+    <p class="cuerpo-bd">{{{cuerpo}}}</p>
+    <hr />
+  </div>
+  {{/each}}
+
+  <div class="div-novedades">
+    <!-- Guitar Demo -->
+    <h2 class="novedades-views">Lo nuevo!</h2>
+    <section class="video-guitar-demo animate__animated animate__flipInX">
+      <p class="title-views">
+        ESP Guitars: LTD Deluxe MH-1000 EverTune Snow White Demo
+      </p>
+      <video
+        src="video/guitar-video.mp4"
+        muted
+        controls
+        loop
+        data-smart-video
+        class="video"
+      ></video>
+    </section>
+    <h2 class="h2-novedades">Pedales multiefectos</h2>
+    <p class="p-novedades">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, earum.
+      Eveniet quia qui dolorum voluptate ex labore sint quis alias optio laborum
+      molestias harum ipsam distinctio nostrum quasi, consequuntur unde!
+    </p>
+  </div>
+  <div class="contenedor-novedades">
+    <div class="contenido-novedades">
+      <div class="nuevo-novedades left">
+        <img src="images/Accesorios/a1.jpg" alt="a1" width="212" />
+        <h5>Lorem</h5>
+        <h6>Lorem, ipsum.</h6>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Necessitatibus cum delectus deleniti eum veritatis repellat eaque
+          ullam quasi sequi. Maiores eos voluptate aut dicta voluptates tempora
+          id inventore quae rerum?
+        </p>
+      </div>
+
+      <div class="nuevo-novedades right">
+        <img src="images/Accesorios/a3.jpg" alt="a3" width="200" />
+        <h5>Lorem</h5>
+        <h6>Lorem, ipsum.</h6>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Necessitatibus cum delectus deleniti eum veritatis repellat eaque
+          ullam quasi sequi. Maiores eos voluptate aut dicta voluptates tempora
+          id inventore quae rerum?
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="./javascripts/smart-video.js"></script>

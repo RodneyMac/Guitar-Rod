@@ -1,0 +1,64 @@
+<script type="text/javascript">
+    function eliminar() {
+        var confirmar = confirm("Desea eliminar esta información?");
+
+        if(confirmar == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+<div class="container" style="margin-top: 20px">
+    <div class="row">
+        <p class="text-end"><strong class="bienvenida">Hola</strong> {{usuario}}! <a href="/admin/login/logout" class="btn btn-danger">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-7">
+            <h3 class="listado-novedades">Listado de novedades</h3>
+        </div>
+        <div class="col-2 text-end">
+            <a href="/admin/novedades/agregar" class="btn btn-success"><i class="fas fa-plus"></i> Nuevo</a>
+        </div>
+
+        <div class="col-3">
+            <form class="d-flex" action="/admin/novedades" method="get">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="q" {{#if q}} value="{{q}}" {{/if}}>
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Imagenes</th>
+                    <th scope="col" class="text-end">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each novedades}}
+                <tr>
+                    <th scope="row" class="id-novedades">{{id}}</th>
+                    <td class="title-novedades">{{titulo}}</td>
+                    <td>{{{imagen}}}</td>
+                    <td class="text-end">
+                        <a href="/admin/novedades/modificar/{{id}}" class="btn btn-info" title="Modificar"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-danger" title="Eliminar" onclick="return eliminar()"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{#if is_search}}
+            {{#unless novedades.length}}
+                <p class="mensaje-error">No se encontraron resultados para <b>"{{q}}"</b></p>
+            {{/unless}}
+        {{/if}}
+    </div>
+</div>

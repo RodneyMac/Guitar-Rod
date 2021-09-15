@@ -1,0 +1,86 @@
+<!-- Main -->
+<main>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="items-tabla" scope="col">#</th>
+          <th class="items-tabla" scope="col">Item</th>
+          <th class="items-tabla" scope="col">Cantidad</th>
+          <th class="items-tabla" scope="col">Acción</th>
+          <th class="items-tabla" scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody id="items"></tbody>
+      <tfoot>
+        <tr id="footer">
+          <th scope="row" colspan="5" class="carrito-vacio">
+            Carrito vacío - Puede iniciar su compra!
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div class="row animate__animated animate__slideInDown" id="cards"></div>
+  </div>
+
+  <template id="template-footer">
+    <th scope="row" colspan="2" class="total-productos">Total productos</th>
+    <td class="td-total-productos">10</td>
+    <td>
+      <button
+        class="btn btn-danger btn-sm"
+        id="vaciar-carrito"
+        title="Eliminar todos los productos"
+      >
+        Vaciar todo
+      </button>
+    </td>
+    <td class="font-weight-bold td-span-footer">$ <span>5000</span></td>
+  </template>
+
+  <template id="template-carrito">
+    <tr class="template-car">
+      <th scope="row">id</th>
+      <td>Guitarra</td>
+      <td>1</td>
+      <td>
+        <button
+          class="btn btn-info btn-sm"
+          title="Aumentar cantidad del producto"
+        >
+          +
+        </button>
+        <button
+          class="btn btn-danger btn-sm"
+          title="Disminuir cantidad del producto"
+        >
+          -
+        </button>
+      </td>
+      <td>$ <span>500</span></td>
+    </tr>
+  </template>
+
+  <template id="template-card">
+    <div class="col-12 mb-2 col-md-3">
+      <div class="card">
+        <img src="" alt="" class="card-img-top" />
+        <div class="card-body">
+          <h5>Titulo</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus cum delectus deleniti eum veritatis repellat eaque
+            ullam quasi sequi.
+          </p>
+          <small class="precio">Precio $</small>
+          <h4>Precio</h4>
+          <button class="btn btn-dark" title="Añadir al carrito">
+            Comprar
+          </button>
+        </div>
+      </div>
+    </div>
+  </template>
+</main>
+<script src="./javascripts/guitarras.js"></script>
